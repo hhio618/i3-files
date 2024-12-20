@@ -10,7 +10,8 @@ floating_modifier $super
 
 # autostart
 exec --no-startup-id hsetroot -fill ~/.wallpaper.png
-exec --no-startup-id libinput-gestures
+exec_always --no-startup-id libinput-gestures
+exec_always --no-startup-id nm-applet
 
 # start a terminal
 bindsym $super+Return exec alacritty
@@ -31,8 +32,8 @@ bindsym $super+e exec thunar
 bindsym XF86AudioRaiseVolume exec amixer -q set Master 5%+
 bindsym XF86AudioLowerVolume exec amixer -q set Master 5%-
 bindsym XF86AudioMute exec amixer set Master toggle
-bindsym XF86MonBrightnessUp exec sudo brightnessctl set 5%+
-bindsym XF86MonBrightnessDown exec sudo brightnessctl set 5%-
+bindsym XF86MonBrightnessUp exec --no-startup-id brightnessctl set +5%
+bindsym XF86MonBrightnessDown exec --no-startup-id brightnessctl set 5%-
 
 # kill focused window
 bindsym $super+c kill
