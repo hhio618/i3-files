@@ -9,10 +9,10 @@ font pango:Ionicons 9, Poppins Regular 9
 floating_modifier $super
 
 # autostart
-exec --no-startup-id hsetroot -center ~/.wallpaper.png
+exec --no-startup-id hsetroot -fill ~/.wallpaper.png
 
 # start a terminal
-bindsym $super+Return exec i3-sensible-terminal
+bindsym $super+Return exec alacritty
 
 # start dmenu (a program launcher)
 bindsym $super+d exec i3-dmenu-desktop --dmenu="dmenu -i -b \
@@ -34,7 +34,7 @@ bindsym XF86MonBrightnessDown exec brightnessctl set 5%-
 
 # kill focused window
 bindsym $super+c kill
-bindsym $alt+F4 kill
+bindsym $super+Shift+Q kill
 
 # change focus
 bindsym $super+Left focus left
@@ -83,7 +83,7 @@ bindsym $super+Shift+5 move container to workspace 5:V
 bindsym $super+Shift+6 move container to workspace 6:VI
 
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
-bindsym $super+BackSpace exec "i3-msg restart"
+bindsym $super+Shift+R exec "i3-msg restart"
 
 # exit i3
 bindsym $super+q exec "i3-nagbar -t warning -m 'Really, exit?' \
@@ -102,8 +102,8 @@ bindsym $super+r mode "resize"
 # panel
 bar {
 	status_command i3status
-	position top
-	workspace_min_width 24
+	position bottom
+	workspace_min_width 48
 	padding 2px 8px 2px 8px
 	strip_workspace_numbers yes
 
